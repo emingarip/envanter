@@ -19,7 +19,9 @@
     "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "pg": "^8.11.3",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
@@ -27,16 +29,16 @@
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "nodemon": "^3.0.2",
-    "sqlite3": "^5.1.6"
+    "nodemon": "^3.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server/index.js",
+    "start:frontend": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "nodemon server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm start\""
+    "dev": "concurrently \"npm run server\" \"npm run start:frontend\""
   },
   "eslintConfig": {
     "extends": [
