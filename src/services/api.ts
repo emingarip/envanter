@@ -1,6 +1,6 @@
 import { Personnel, InventoryItem, Vehicle, Assignment, HistoryRecord } from '../context/AppContext';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
 
 class ApiService {
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
