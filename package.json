@@ -21,7 +21,8 @@
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
     "pg": "^8.11.3",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
@@ -33,12 +34,12 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "start:frontend": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run start:frontend\""
+    "dev:server": "nodemon server/index.js",
+    "dev:frontend": "react-scripts start",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:frontend\""
   },
   "eslintConfig": {
     "extends": [
