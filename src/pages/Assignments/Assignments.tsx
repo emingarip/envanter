@@ -170,7 +170,7 @@ const Assignments: React.FC = () => {
   const handleReturn = async (assignmentId: string) => {
     if (window.confirm('Bu zimmeti iade etmek istediğinizden emin misiniz?')) {
       try {
-        const updatedAssignment = await apiService.returnAssignment(assignmentId, new Date().toISOString());
+        const updatedAssignment = await apiService.returnAssignment(parseInt(assignmentId), new Date().toISOString());
         dispatch({ type: 'UPDATE_ASSIGNMENT', payload: updatedAssignment });
         setSnackbar({ open: true, message: 'Zimmet başarıyla iade edildi!', severity: 'success' });
       } catch (error) {
